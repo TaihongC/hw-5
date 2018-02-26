@@ -1,10 +1,10 @@
-var freqA = 100;
-var freqS = 200;
-var freqD = 300;
-var freqF = 395;
-var freqG = 500;
-var freqH = 600;
-var freqJ = 800;
+var freqA = 125;
+var freqS = 261;
+var freqD = 294;
+var freqF = 329;
+var freqG = 392;
+var freqH = 498;
+var freqJ = 761;
 
 var playingA = false;
 var playingS = false;
