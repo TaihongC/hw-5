@@ -1,12 +1,10 @@
 var freqA = 100;
 var freqS = 200;
 var freqD = 300;
-var freqF = 400;
+var freqF = 395;
 var freqG = 500;
 var freqH = 600;
 var freqJ = 800;
-
-var oscA, oscS, oscD, oscF, oscG,oscH,oscJ;
 
 var playingA = false;
 var playingS = false;
@@ -16,188 +14,188 @@ var playingG = false;
 var playingH = false;
 var playingJ = false;
 
+var oscA, oscS, oscD, oscF, oscG, oscH, oscJ;
 
 function setup() {
-  createCanvas (500, 500);
-  backgroundColor = color(255, 0, 255);
-  textAlign(CENTER);
-  
-  oscA = new p5.Oscillator();
-  oscA.setType('triangle');
-  oscA.freq(freqA);
-  oscA.amp(0);
-  oscA.start();
-  
-  oscS = new p5.Oscillator();
-  oscS.setType('triangle');
-  oscS.freq(freqS);
-  oscS.amp(0);
-  oscS.start();
-  
-  oscD = new p5.Oscillator();
-  oscD.setType('triangle');
-  oscD.freq(freqD);
-  oscD.amp(0);
-  oscD.start();
-  
-  oscF = new p5.Oscillator();
-  oscF.setType('triangle');
-  oscF.freq(freqF);
-  oscF.amp(0);
-  oscF.start();
-  
-  oscG = new p5.Oscillator();
-  oscG.setType('triangle');
-  oscG.freq(freqG);
-  oscG.amp(0);
-  oscG.start();
+	createCanvas(500, 500);
+	textAlign(CENTER);
+
+	oscA = new p5.Oscillator();
+	oscA.setType('triangle');
+	oscA.freq(freqA);
+	oscA.amp(0);
+	oscA.start();
+
+	oscS = new p5.Oscillator();
+	oscS.setType('triangle');
+	oscS.freq(freqS);
+	oscS.amp(0);
+	oscS.start();
+
+	oscD = new p5.Oscillator();
+	oscD.setType('triangle');
+	oscD.freq(freqD);
+	oscD.amp(0);
+	oscD.start();
+
+	oscF = new p5.Oscillator();
+	oscF.setType('triangle');
+	oscF.freq(freqF);
+	oscF.amp(0);
+	oscF.start();
+
+	oscG = new p5.Oscillator();
+	oscG.setType('triangle');
+	oscG.freq(freqG);
+	oscG.amp(0);
+	oscG.start();
 
 	oscH = new p5.Oscillator();
-  oscH.setType('triangle');
-  oscH.freq(freqG);
-  oscH.amp(0);
-  oscH.start();
- 
+	oscH.setType('triangle');
+	oscH.freq(freqG);
+	oscH.amp(0);
+	oscH.start();
+
 	oscJ = new p5.Oscillator();
-  oscJ.setType('triangle');
-  oscJ.freq(freqG);
-  oscJ.amp(0);
-  oscJ.start();}
+	oscJ.setType('triangle');
+	oscJ.freq(freqG);
+	oscJ.amp(0);
+	oscJ.start();
+}
 
 
 function draw() {
-  if (playingA, playingS, playingD, playingF, playingG,playingH,playingJ) {
-    background(0, 255, 255);
-  } else {
-    background(255, 0, 255);
-  }
-  text('click here,\nthen press A/S/D/F\n keys to play', width / 2, 40);
+	background(0);
+	if (playingA, playingS, playingD, playingF, playingG, playingH, playingJ) {
+	} else {
+	background(0);
+	}
+	text('click here,\nthen press A/S/D/F\n keys to play', width / 2, 40);
 }
 
 function keyPressed() {
-  print("got key press for ", key);
-  var osc;
-  if (key == 'A') {
-    osc = oscA;
-    playingA = true;
-  } else if (key == 'S') {
-    osc = oscS;
-    playingS = true;
-  } else if (key == 'D') {
-    osc = oscD;
-    playingD = true;
-  } else if (key == 'F') {
-    osc = oscF;
-    playingF = true;
-  } else if (key == 'G') {
-    osc = oscG;
-    playingG = true;
-	}else if (key == 'H') {
-    osc = oscH;
-    playingH = true;
-	}else if (key == 'J') {
-    osc = oscJ;
-    playingJ = true;
-  }
-  if (osc) {
-    osc.amp(0.5, 0.1);
-  }
-}
-
-  function draw() {
-  background(255);
-  fill(120);
-  if (playingA) {
-    fill(255, 204,100);
-    noStroke();
-    ellipse(230, 232,25, 25);
-		ellipse(130, 132,25, 25);
-		ellipse(252, 257,25, 25);
-		ellipse(176, 222,25, 25);
-		ellipse(330, 195,25, 25);
-  }
-  if (playingS) {
-    noStroke();
-    fill(color(0, 0, 255));
-		ellipse(130, 130,35,35);
-		ellipse(230, 232,25, 25);
-		ellipse(330, 332,25, 25);
-    ellipse(330, 232,25, 25);
-		ellipse(330, 232,25, 25);
-		ellipse(330, 232,25, 25);
-		ellipse(330, 232,25, 25);
-  
-  }
-  if (playingD) {
-    fill('rgb(0,255,0)');
-    noStroke();
-   ellipse(100,100,65,65);
-	 ellipse(300,220,65,65);
-  }
-  if (playingF) {
-    fill('rgba(100%,0%,100%,0.5)');
-    noStroke();
-    ellipse(90,165,85,85);
-		ellipse(50,430,50,50);
-		ellipse(260,127,50,50);
-		ellipse(243,37,50,50);
-  }
-  if (playingG) {
-    fill(167, 189, 20);
-    noStroke();
-    ellipse(100, 145, 15, 15);
-		ellipse(150, 345, 15, 15);
-		ellipse(120, 445, 15, 15);
-		ellipse(350, 245, 15, 15);
-		ellipse(400, 274, 20, 20);
-		ellipse(500, 285, 20, 20);
-		ellipse(430, 185, 30, 30);
-		ellipse(4360, 255, 30, 30);
-		ellipse(450, 385, 35, 35);
-		ellipse(260, 2215, 18, 18);
-   }
-if (playingH) {
-    fill(134, 23, 15);
-    noStroke();
-    ellipse(200,130,55,55);
-    ellipse(84,75,15,15);
-    ellipse(238,237,35,35);
-    ellipse(157,46,35,35);}
-if (playingJ) {
-    fill('purple');
-    noStroke();
-    ellipse(447,30,65,65);
-    ellipse(257,434,55,55);
-ellipse(207,204,55,55);
-ellipse(357,384,55,55);}
-}
-
-  function keyReleased() {
-  print("got key release for ", key);
-  var osc;
-  if (key == 'A') {
-    osc = oscA;
-    playingA = false;
-  } else if (key == 'S') {
-    osc = oscS;
-    playingS = false;
-  } else if (key == 'D') {
-    osc = oscD;
-    playingD = false;
-  } else if (key == 'F') {
-    osc = oscF;
-    playingF = false;
-  } else if (key == 'G') {
-    osc = oscG;
-    playingG = false;
+	print("got key press for ", key);
+	var osc;
+	if (key == 'A') {
+		osc = oscA;
+		playingA = true;
+	} else if (key == 'S') {
+		osc = oscS;
+		playingS = true;
+	} else if (key == 'D') {
+		osc = oscD;
+		playingD = true;
+	} else if (key == 'F') {
+		osc = oscF;
+		playingF = true;
+	} else if (key == 'G') {
+		osc = oscG;
+		playingG = true;
 	} else if (key == 'H') {
-    osc = oscH;
-    playingH = false;
+		osc = oscH;
+		playingH = true;
 	} else if (key == 'J') {
-    osc = oscJ;
-    playingJ = false;
-  }
-  if (osc) {
-    osc.amp(0, 0.5);
- }
+		osc = oscJ;
+		playingJ = true;
 	}
+	if (osc) {
+		osc.amp(0.5, 0.1);
+	}
+}
+
+function draw() {
+	background(0);
+	fill(120);
+	if (playingA) {
+		fill(255, 204, 100);
+		noStroke();
+		ellipse(random(width),random(height),random(100),random(200));
+	}//ellipse(230, 232, 25, 25);
+		//ellipse(130, 132, 25, 25);
+		//ellipse(252, 257, 25, 25);
+		//ellipse(176, 222, 25, 25);
+		//ellipse(330, 195, 25, 25);
+	
+	if (playingS) {
+		noStroke();
+		fill(color(0, 0, 255));
+		ellipse(random(width),random(height),random(100),random(200));
+	}
+	if (playingD) {
+		fill('rgb(0,255,0)');
+		noStroke();
+		ellipse(random(width),random(height),random(100),random(200));// ellipse(100, 100, 65, 65);
+		// ellipse(300, 220, 65, 65);
+	}
+	if (playingF) {
+		fill('rgba(100%,0%,100%,0.5)');
+		noStroke();
+		ellipse(random(width),random(height),random(100),random(200));
+		// ellipse(90, 165, 85, 85);
+		// ellipse(50, 430, 50, 50);
+		// ellipse(260, 127, 50, 50);
+		// ellipse(243, 37, 50, 50);
+	}
+
+	if (playingG) {
+		fill(167, 189, 20);
+		noStroke();
+		ellipse(random(width),random(height),random(100),random(200));
+		// ellipse(100, 145, 15, 15);
+		// ellipse(150, 345, 15, 15);
+		// ellipse(120, 445, 15, 15);
+		// ellipse(350, 245, 15, 15);
+		// ellipse(400, 274, 20, 20);
+		// ellipse(500, 285, 20, 20);
+		// ellipse(430, 185, 30, 30);
+		// ellipse(4360, 255, 30, 30);
+		// ellipse(450, 385, 35, 35);
+		// ellipse(260, 2215, 18, 18);
+	}
+	if (playingH) {
+		fill(134, 23, 15);
+		noStroke();
+		ellipse(random(width),random(height),random(100),random(200));
+		//ellipse(200, 130, 55, 55);
+		//ellipse(84, 75, 15, 15);
+		//ellipse(238, 237, 35, 35);
+		//ellipse(157, 46, 35, 35);
+	}
+	if (playingJ) {
+		fill('purple');
+		noStroke();
+				ellipse(random(width),random(height),random(100),random(200));ellipse(447, 30, 65, 65);
+		// ellipse(257, 434, 55, 55);
+		// ellipse(207, 204, 55, 55);
+		// ellipse(357, 384, 55, 55);
+	}
+}
+function keyReleased() {
+	print("got key release for ", key);
+	var osc;
+	if (key == 'A') {
+		osc = oscA;
+		playingA = false;
+	} else if (key == 'S') {
+		osc = oscS;
+		playingS = false;
+	} else if (key == 'D') {
+		osc = oscD;
+		playingD = false;
+	} else if (key == 'F') {
+		osc = oscF;
+		playingF = false;
+	} else if (key == 'G') {
+		osc = oscG;
+		playingG = false;
+	} else if (key == 'H') {
+		osc = oscH;
+		playingH = false;
+	} else if (key == 'J') {
+		osc = oscJ;
+		playingJ = false;
+	}
+	if (osc) {
+		osc.amp(0, 0.5);
+	}
+}
