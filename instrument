@@ -4,7 +4,7 @@ var freqD = 300;
 var freqF = 400;
 var freqG = 500;
 var freqH = 600;
-var freqJ = 700;
+var freqJ = 800;
 
 var oscA, oscS, oscD, oscF, oscG,oscH,oscJ;
 
@@ -108,47 +108,68 @@ function keyPressed() {
   background(255);
   fill(120);
   if (playingA) {
-    fill(250, 210, 0);
+    fill(255, 204,100);
     noStroke();
-    ellipse(230, 232,20, 25);
+    ellipse(230, 232,25, 25);
+		ellipse(130, 132,25, 25);
+		ellipse(252, 257,25, 25);
+		ellipse(176, 222,25, 25);
+		ellipse(330, 195,25, 25);
   }
   if (playingS) {
     noStroke();
-    fill(200, 4, 0);
-    rect(35,200,180,80);
-		triangle(45, 200, 320,80, 365, 200);
+    fill(color(0, 0, 255));
+		ellipse(130, 130,35,35);
+		ellipse(230, 232,25, 25);
+		ellipse(330, 332,25, 25);
+    ellipse(330, 232,25, 25);
+		ellipse(330, 232,25, 25);
+		ellipse(330, 232,25, 25);
+		ellipse(330, 232,25, 25);
   
   }
   if (playingD) {
-    fill(132, 187, 50);
+    fill('rgb(0,255,0)');
     noStroke();
-   ellipse(100,100,100,100);
-	 ellipse(300,220,20,20);
+   ellipse(100,100,65,65);
+	 ellipse(300,220,65,65);
   }
   if (playingF) {
-    fill(134, 23, 15);
+    fill('rgba(100%,0%,100%,0.5)');
     noStroke();
-    ellipse(200,230,150,150);
+    ellipse(90,165,85,85);
+		ellipse(50,430,50,50);
+		ellipse(260,127,50,50);
+		ellipse(243,37,50,50);
   }
   if (playingG) {
     fill(167, 189, 20);
     noStroke();
-    rect(100, 245, 80, 5);
-    rect(100, 295, 80, 5);
-		rect(320, 265, 80, 5);
-    rect(320, 295, 80, 5);
-    rect(200, 365, 80, 5);
-    rect(200, 395, 80, 5);
-		rect(420, 365, 80, 5);
-    rect(420, 395, 80, 5);}
+    ellipse(100, 145, 15, 15);
+		ellipse(150, 345, 15, 15);
+		ellipse(120, 445, 15, 15);
+		ellipse(350, 245, 15, 15);
+		ellipse(400, 274, 20, 20);
+		ellipse(500, 285, 20, 20);
+		ellipse(430, 185, 30, 30);
+		ellipse(4360, 255, 30, 30);
+		ellipse(450, 385, 35, 35);
+		ellipse(260, 2215, 18, 18);
+   }
 if (playingH) {
     fill(134, 23, 15);
     noStroke();
-    ellipse(200,230,150,150);
+    ellipse(200,130,55,55);
+    ellipse(84,75,15,15);
+    ellipse(238,237,35,35);
+    ellipse(157,46,35,35);}
 if (playingJ) {
-    fill(134, 23, 15);
+    fill('purple');
     noStroke();
-    ellipse(200,230,150,150);}
+    ellipse(447,30,65,65);
+    ellipse(257,434,55,55);
+ellipse(207,204,55,55);
+ellipse(357,384,55,55);}
 }
 
   function keyReleased() {
@@ -177,6 +198,6 @@ if (playingJ) {
     playingJ = false;
   }
   if (osc) {
-    osc.amp(0, 0.8);
+    osc.amp(0, 0.5);
  }
 	}
